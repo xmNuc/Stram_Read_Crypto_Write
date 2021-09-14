@@ -1,8 +1,9 @@
-Version whidhout iv, less safe, but works for me ;>
+Version whidhout iv, less safe, but it works.
+It uses stream so thats mean works for big files.
+You will gain 'DeprecationWarning' there is never version: crypto.createCipheriv.
 
 How it works:
-streamencrypt.js
-Using stream encrypting input file.
+streamencrypt.js using stream to encrypt input file.
 Saving to output file.
 
 Use:
@@ -11,8 +12,7 @@ node streamencrypt.js inputfile outputfile password
 
 ---
 
-streamdecrypt.js
-Using stream decrypting input file.
+streamdecrypt.js using stream for decrypt input file.
 Saving to output file.
 
 Use:
