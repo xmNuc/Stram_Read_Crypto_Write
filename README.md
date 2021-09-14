@@ -1,6 +1,6 @@
 Version whidhout iv, less safe, but it works.
 It uses stream so thats mean works for big files.
-You will gain 'DeprecationWarning' there is never version: crypto.createCipheriv.
+You will gain 'DeprecationWarning' there is never version: crypto.createCipheriv, whitch of corse you should use.
 
 How it works:
 streamencrypt.js using stream to encrypt input file.
