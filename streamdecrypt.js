@@ -2,20 +2,20 @@ const { createReadStream, createWriteStream } = require('fs');
 const { pipeline } = require('stream').promises;
 const { createDecipher } = require('crypto');
 const { promisify } = require('util');
-const scrypt = promisyfy(require('crypto').script);
+const scrypt = promisify(require('crypto').scrypt);
 const { ENCRYPTION_SALT } = require('./constant');
 
-const readFile = process.argv[2];
-const writeFile = process.argv[3];
-const password = process.argv[4];
-
 (async () => {
+  const [, , inputFile, outputFile, pwd] = process.argv;
+  const key = await scrypt(pwd, ENCRYPTION_SALT, 24);
+  const algorithm = 'aes-192-cbc';
+
   await pipeline(
-    createReadStream(readFile),
-    createDecipher(scrypt, password, ENCRYPTION_SALT),
-    createWriteStream(writeFile)
+    createReadStream(inputFile),
+    createDecipher(algorithm, key),
+    createWriteStream(outputFile)
   );
   console.log(
-    `Decryprion file ${readFile} is: Done! New name of Decrypted file is ${writeFile}.`
+    `Decryprion file ${inputFile} is: Done! New name of Decryptetd file is ${outputFile}.`
   );
 })();

@@ -3,6 +3,7 @@ const ENCRYPTION_SALT =
 
 const HASH_SALT =
   'dvsdgdfh f fghgf jgf jfg hmghk?D FHDFG >H>DF*&D^&$@K@ (@@*fj83rjr384tj)g 42342 4354dfgb y45*** 3924neg  t34tgd ';
+
 module.exports = {
   ENCRYPTION_SALT,
   HASH_SALT,
